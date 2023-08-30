@@ -1,0 +1,133 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --vdk-blue-main-gb: hsl(217, 54%, 11%);
+  --vdk-blue-card-gb: hsl(216, 50%, 16%);
+  --vdk-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--vdk-blue-main-gb);
+}
+
+.container {
+  background-color: var(--vdk-blue-card-gb);
+  width: 330px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 23px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 7px 4px #04ffff45 inset;
+}
+
+.img-container {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img-container img {
+  max-width: 100%;
+  display: block;
+}
+
+.img-container .overlay {
+  position: absolute;
+  background-color: hsla(178, 100%, 50%, 45%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.img-container .overlay svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container:hover .overlay {
+  display: block;
+  transition: .3;
+}
+
+.details {
+  padding-top: 17px;
+}
+
+.details h2 {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.details p {
+  color: var(--soft-blue);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.details > p {
+  margin: 15px 0;
+}
+
+.details .info , .details .info div {
+  display: flex;
+  align-items: center;
+}
+
+.details .info {
+  justify-content: space-between;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--vdk-blue-line);
+}
+
+.details .info div {
+  gap: 8px;
+}
+
+.details .info div:first-of-type span {
+  color: var(--cyan);
+  font-weight: 400;
+}
+
+.details .creator {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.details .creator img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.details .creator .name {
+  color: var(--white);
+}
+
+.name , h2 {
+  transition: .3s;
+  cursor: pointer;
+}
+
+.name:hover , h2:hover {
+  color: var(--cyan)!important;
+}
